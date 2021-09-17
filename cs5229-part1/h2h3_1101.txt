@@ -1,0 +1,35 @@
+Connecting to host 10.0.0.3, port 1101
+[ 20] local 10.0.0.2 port 41238 connected to 10.0.0.3 port 1101
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[ 20]   0.00-1.00   sec   120 KBytes   983 Kbits/sec  15  
+[ 20]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   4.00-5.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  16  
+[ 20]   9.00-10.00  sec   128 KBytes  1.05 Mbits/sec  16  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[ 20]   0.00-10.00  sec  1.24 MBytes  1.04 Mbits/sec  3.111 ms  0/159 (0%)  
+[ 20] Sent 159 datagrams
+
+Server output:
+Accepted connection from 10.0.0.2, port 47570
+[ 21] local 10.0.0.3 port 1101 connected to 10.0.0.2 port 41238
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[ 21]   0.00-1.00   sec   120 KBytes   983 Kbits/sec  4.765 ms  0/15 (0%)  
+[ 21]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  5.217 ms  0/16 (0%)  
+[ 21]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  5.927 ms  0/16 (0%)  
+[ 21]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  6.513 ms  0/16 (0%)  
+[ 21]   4.00-5.00   sec   128 KBytes  1.05 Mbits/sec  4.428 ms  0/16 (0%)  
+[ 21]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  4.240 ms  0/16 (0%)  
+[ 21]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  3.701 ms  0/16 (0%)  
+[ 21]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  2.905 ms  0/16 (0%)  
+[ 21]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  3.919 ms  0/16 (0%)  
+[ 21]   9.00-10.00  sec   128 KBytes  1.05 Mbits/sec  3.111 ms  0/16 (0%)  
+
+
+iperf Done.

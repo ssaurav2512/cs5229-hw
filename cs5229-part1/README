@@ -1,0 +1,43 @@
+@Author Saurav Sircar/A0198873E
+Date : 05/09/2019
+
+
+################################################
+Policy 1
+################################################
+Policy 1 was created to limit all traffic from node H1 to node H2 to a maximum of 1MBps.
+I have made use of the queues created in the file "mininet_add_queue.py", which contains 3 queues.
+I have used q1, which has a max-rate and min-rate set to 1MBps.
+Making use of this queue for the policies "S1H2" and "S2H2" helped in achieving this rate limit.
+
+The logs can be found in the file "h1h2.txt".
+
+################################################
+Policy 2
+################################################
+Policy 2 was set up to block udp ports from 1000-1100 from node H2 to H3 and vice versa.
+I have made use of bitmasking to achieve this feat. A total of 6 bitmasks used in the policies between H2 and H3,
+namely, "S2H3_1" to "S2H3_6" and "S3H2_1" to "S3H2_6" respectively, were set to the term "udp_dst" to achieve this.
+
+The ranges for the bitmasks are as given below:
+1. 0x3e8/0xfff8 for range 1000-1007
+2. 0x3f0/0xfff0 for range 1008-1023
+3. 0x400/0xffc0 for range 1024-1087
+4. 0x440/0xfff8 for range 1088-1095
+5. 0x448/0xfffc for range 1096-1099
+6. 0x800 for 1100
+
+The logs can be found in the files "h2h3_<port_number>.txt" and "h3h2_<port_number>".
+The logs have been created for the ports 999, 1000, 1050, 1100 and 1101.
+
+################################################
+Policy 3
+################################################
+Policy 3 is set up from node H1 to H3, to limit the first 20MB of data from H1 to H3 to a rate limit of 1MBps and the next 10MB to a rate limit of 512KBps, and so on as long as there is traffic.
+This is done by creating an endless while loop for as long as data is incoming, and setting the data limits as mentioned above.
+2 queues, q1 (1MBps rate limit) and q2 (512KBps rate limit) are used in the policies for the switches S1 and S3. This canbe found in the "actions" variable of the policies.
+The values "ip_proto": "0x06" and "tcp_dst": "80" are used to ensure this policy applies for only HTTP data.
+As the data limit is reached, the policies switch from one to the other (1MBps to 512KBps after 20MB and 512KBps to 1MBps after the next 10MB) as long as the data is incoming.
+A delay is added between every switch from one policy to another to ensure no overload occurs.
+
+The logs can be found in the file "h1h3.txt".
